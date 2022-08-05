@@ -36,15 +36,14 @@ export  const even= () =>{
         const answer = readlineSync.question('Your answer ' +':');
         //сравнение ответов
          
-        const check = (answer) =>{
             if (rightanswer === answer) {
                  console. log ( 'Correct!');
             } else {
-                console. log (answer +' is wrong answer ;(. Correct answer was' + rightanswer);
+                console. log (answer +' is wrong answer ;(. Correct answer was ' + rightanswer);
+                return;
             }
 
-        }
-        check(answer);
+    
 
     }//end cycle 
 
