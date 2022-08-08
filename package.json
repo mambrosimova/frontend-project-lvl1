@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "bin": {
     "brain-games": "bin/brain-games.js",
-    "brain-even": "bin/brain-even.js"
+    "brain-even": "bin/brain-even.js",
+    "brain-calculator": "bin/brain-calculator.js"
+
   },
   "type": "module",
   "description": "[![Actions Status](https://github.com/mambrosimova/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/mambrosimova/frontend-project-lvl1/actions)",
