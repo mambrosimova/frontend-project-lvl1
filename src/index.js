@@ -18,21 +18,35 @@ let a = Math.round(Math.random()*100);
 return a;
 }  
 
-//задание рандомой мат операции
-export const randomoper =() => {
- const oper = ['+' , '-', '*'];//задание массива операций
-let RO = oper[Math.floor(Math.random() * (oper.length-0+1))];
-return RO;
-
+//функция получения rightanswer
+export const getrightanswer= (n,m) => {
+const oper = ['+' , '-', '*'];//задание массива операций
+let RO = oper[Math.floor(Math.random() * (oper.length))];
+let a;
+    if (RO === '+'){
+        a=n+m;
+    }
+    if (RO === '-'){
+        a=n-m;
+    }
+    if (RO === '*'){
+       a= n*m;
+    }
+    return a;
 }
+// функция получения мат операции для вопроса
 
-//функция провертки ответа на правильности
-export const check= (a, b) =>{
-if (a == b) {
-    console. log ( 'Correct!');
-} else {
-console.log (b +' is wrong answer ;(. Correct answer was ' + a);
-//console.log ('Let us try again,' + name+'!');
-return;
-}
+export const randomoper =(a,b,rightanswer) => {
+    let result;
+     if (rightanswer / b === a) {
+        result ='*';
+     }
+     if (rightanswer-b === a) {
+       result ='+';
+     }
+     if (rightanswer+b === a) {
+        result='-';
+     }
+return result;
+
 }

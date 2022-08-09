@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import {greeting, randomnumber,randomoper, check} from '../src/index.js';
+import {greeting, randomnumber,getrightanswer, randomoper} from '../src/index.js';
 
 export const calc =() => {
 
@@ -19,12 +19,12 @@ for (let i=0; i<=n ; i++) {
 // получить вопрос и ответ правильный ( 2 перемнных)
 let RN1= randomnumber();
 let RN2=randomnumber();
-let RO = randomoper();//переменная, в которой лежит рандомный знак
-let rightanswer=RN1+RO+RN2;
-console.log (RN1, RN2, rightanswer, RO);
+let rightanswer=getrightanswer(RN1, RN2);
+let RO=randomoper(RN1,RN2,rightanswer);
+//console.log (RN1, RN2,rightanswer,RO);
 
 //задать вопрос и получить ответ игрока
-console.log('Question'+':'+RN1+ RO+RN2);
+console.log('Question'+':'+ RN1 + RO + RN2);
 const answer = readlineSync.question('Your answer ' +':');
 
 //сравнение ответов
