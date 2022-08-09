@@ -34,8 +34,8 @@ let a;
     }
     return a;
 }
-// функция получения мат операции для вопроса
 
+// функция получения мат операции для вопроса
 export const randomoper =(a,b,rightanswer) => {
     let result;
      if (rightanswer / b === a) {
@@ -48,5 +48,23 @@ export const randomoper =(a,b,rightanswer) => {
         result='-';
      }
 return result;
+
+}
+//функция для определения НОД
+export const NOK =(a,b) => {
+let min;
+let max;
+    if( a>b){
+        min=b;
+        max=a;
+    } else { 
+        min=a ;
+        max=b;
+    }
+for (let i=min; i>=1; i--) {
+    if(max%i===0 && min%i===0) {
+        return i;
+    }
+}
 
 }
