@@ -15,7 +15,7 @@ for (let i=0; i<=n ; i++) {
 // получить правильный ответ
 let RN=randomnumber2(100);//задали рандомное число от 1-100
 let rightanswer=checkprime(RN);// получили правильный ответ
-console.log(RN, rightanswer);
+//console.log(RN, rightanswer);
 
 //задать вопрос и получить ответ игрока
 console.log('Question'+':'+RN);

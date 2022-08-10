@@ -95,7 +95,7 @@ return p;
 
 // функция, которая проверяет просто чило или нет /вернет да или нет
 export const checkprime=(n) =>{
-if (n===1) {
+if (n<2) {
     return 'no';
 }
 for (let i=2; i<= n/2 ; i++) {
