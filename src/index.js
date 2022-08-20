@@ -20,12 +20,13 @@ console.log('Question'+':'+ question);
 const answer = readlineSync.question('Your answer ' +':');
 
 //сравнение ответов
-if (rightAnswer !== answer) {
+if (rightAnswer != answer) {
     console.log (answer +' is wrong answer ;(. Correct answer was ' + rightAnswer);
-console.log ('Let us try again,' + name+'!');
+    console.log ('Let us try again,' + name+'!');
 return;
-} 
+}
 console. log ( 'Correct!');
+
 
 }// конец цикла 
 

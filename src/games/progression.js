@@ -1,42 +1,42 @@
 import readlineSync from 'readline-sync';
-import {greeting,getprogression, randplacearray } from '../index.js';
+import {runLogic} from '../index.js';
+import {getRandomNumberNdimemsion,randomPlaceArray} from '../utils.js';
 
-export const runProgression = () => {
-//запустили функцию приветствия
-let name=greeting(); 
-// вопрос игры 
-console.log ('What number is missing in the progression?');
+const getProgression =() => {
+    let start=getRandomNumberNdimemsion(100);//задали начало
+    let step=getRandomNumberNdimemsion(10);//задали шаг арифметич прогрессии
+    const result=[];// создали пустой массив
+    let resultlength=Math.floor(Math.random() * (10- 5 + 1)) + 5; //задание рандомной длины массива от 5-10 чисел
+ for (let i=0; i<=resultlength-1; i++) {
+    result.push(start+i*step);
+ }
+ return result;// заполнили массив
 
-//цикл игры:    
-let n=2; 
-for (let i=0; i<=n ; i++) {
-
-// получить правильный ответ
-const progression=getprogression();//наша прогрессия в массиве
-const randplace= randplacearray (progression);//рандомное i в этой прогрессии
-//console.log (progression);
-//console.log (randplace);
- let rightanswer=progression[randplace];//правильный ответ
- //console.log (rightanswer);
-
- const question = progression;
- question[randplace]='...';//ряд с пропусками
-
-
-//задать вопрос и получить ответ игрока
-console.log('Question'+':'+question);
-const answer = readlineSync.question('Your answer ' +':');
-
-//сравнение ответов
-if (rightanswer == answer) {
-    console. log ( 'Correct!');
-} else {
-console.log (answer +' is wrong answer ;(. Correct answer was ' + rightanswer);
-console.log ('Let us try again,' + name+'!');
-return;
 }
 
-}//end of cycle 
 
-console.log ('Congratulations,'+ name+ '!');
-}// end of main function 
+const getRounds =()=> {
+    const rounds=[];//задали пустой массив для 3х раундов
+    const n=3;
+    for ( let i=1;i<=n; i++) {
+        const round=[];// свободный массив для одного раунда [question, rightAnswer]
+        const progression=getProgression();//наша прогрессия в массиве
+        let radndomI=randomPlaceArray(progression);
+        let rightAnswer=progression[radndomI];//правильный ответ
+        const question = progression;
+        question[radndomI]='...';//ряд с пропусками
+        round[0]=question;
+        round[1]=rightAnswer;
+        rounds.push(round);
+        }//end of cycle 
+        return rounds;
+        }//end getRounds
+
+
+
+
+export const runProgression = () => {
+    const discription= 'What number is missing in the progression?';
+    runLogic(discription, getRounds());
+}
+

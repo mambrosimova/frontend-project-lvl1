@@ -1,36 +1,40 @@
 import readlineSync from 'readline-sync';
-import {greeting,checkprime } from '../index.js';
+import {runLogic} from '../index.js';
 import {getRandomNumberNdimemsion} from '../utils.js';
 
+// функция, которая проверяет просто чило или нет /вернет да или нет
+ const checkPrime=(number) =>{
+    if (number<2) {
+        return 'no';
+    }
+    for (let i=2; i<= number/2 ; i++) {
+        if (number%i === 0) {
+            return 'no';
+        }   
+    }
+    return 'yes';
+    }
+
+
+const getRounds =()=> {
+    const rounds=[];//задали пустой массив для 3х раундов
+    const n=3;
+    for ( let i=1;i<=n; i++) {
+        const round=[];// свободный массив для одного раунда [question, rightAnswer]
+        let number= getRandomNumberNdimemsion(100);
+        let rightAnswer=checkPrime(number);// получили правильный ответ
+        const question = number;
+       
+        round[0]=question;
+        round[1]=rightAnswer;
+        rounds.push(round);
+        }//end of cycle 
+        return rounds;
+        }//end getRounds
+
+
 export const runPrime = () => {
+    const discription='Answer "yes" if given number is prime. Otherwise answer "no".';
+    runLogic(discription, getRounds());
 
-//запустили функцию приветствия
-let name=greeting(); 
-// вопрос игры 
-console.log ('Answer "yes" if given number is prime. Otherwise answer "no".');
-
-//цикл игры:    
-let n=2; 
-for (let i=0; i<=n ; i++) {
-
-// получить правильный ответ
-let RN=getRandomNumberNdimemsion(100);//задали рандомное число от 1-100
-let rightanswer=checkprime(RN);// получили правильный ответ
-//console.log(RN, rightanswer);
-
-//задать вопрос и получить ответ игрока
-console.log('Question'+':'+RN);
-const answer = readlineSync.question('Your answer ' +':');
-
-//сравнение ответов
-if (rightanswer == answer) {
-    console. log ( 'Correct!');
-} else {
-console.log (answer +' is wrong answer ;(. Correct answer was ' + rightanswer);
-console.log ('Let us try again,' + name+'!');
-return;
 }
-
-}// end of cycle
-console.log ('Congratulations,'+ name+ '!');
-}// end of main function

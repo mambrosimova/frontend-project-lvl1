@@ -1,40 +1,48 @@
 import readlineSync from 'readline-sync';
-import {greeting,NOK } from '../index.js';
+import {runLogic} from '../index.js';
 import {getRandomNumber} from '../utils.js';
+
+//функция для определения НОД
+const calcGCD =(number1,number2) => {
+         let min;
+        let max;
+        if( number1>number2){
+             min=number2;
+            max=number1;
+        } else { 
+                min=number1 ;
+                max=number2;
+                }
+        for (let GCD=min; GCD>=1; GCD--) {
+                if(max%GCD===0 && min%GCD===0) {
+                 return GCD;
+                     }
+            }
+        }
+
+// функция получения массива раундов      
+const getRounds =()=> {
+        const rounds=[];//задали пустой массив для 3х раундов
+        const n=3;
+        for ( let i=1;i<=n; i++) {
+        const round=[];// свободный массив для одного раунда [question, rightAnswer]
+        let number1= getRandomNumber();
+        let number2=getRandomNumber();
+    
+    
+        let rightAnswer=calcGCD(number1, number2);// правильный ответ
+        const question=(` ${number1}  ${number2}`);// ответ 
+                
+        round[0]=question;
+        round[1]=rightAnswer;
+        rounds.push(round);
+        }//end of cycle 
+        return rounds;
+        }//end getRounds
+
 
 export const getGreatestCommonDevision = () => {
 
-//запустили функцию приветствия
-let name=greeting(); 
-// вопрос игры 
-console.log ('Find the greatest common divisor of given numbers');
-
-//цикл игры:    
-let n=2; 
-for (let i=0; i<=n ; i++) {
-
-let RN1= getRandomNumber();
-let RN2=getRandomNumber();
-
-// получить правильный ответ
-let rightanswer= NOK(RN1, RN2);
-//console.log( RN1, RN2, rightanswer);
-
-//задать вопрос и получить ответ игрока
-console.log('Question'+':'+ RN1+' '+RN2);
-const answer = readlineSync.question('Your answer ' +':');
-
-//сравнение ответов
-if (rightanswer == answer) {
-    console. log ( 'Correct!');
-} else {
-console.log (answer +' is wrong answer ;(. Correct answer was ' + rightanswer);
-console.log ('Let us try again,' + name+'!');
-return;
+    const discription='Find the greatest common divisor of given numbers';
+    runLogic(discription, getRounds());
 }
-
-
-}// end of cycle 
-
-console.log ('Congratulations,'+ name+ '!');
-}// end of main function
