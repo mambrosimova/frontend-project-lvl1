@@ -2,22 +2,22 @@
 
 [![Actions Status](https://github.com/mambrosimova/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/mambrosimova/frontend-project-lvl1/actions)
 
-1. # CodeClimate Bages
+# 1. CodeClimate Bages
 
 <a href="https://codeclimate.com/github/mambrosimova/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/dc20f296656d1af57c39/maintainability" /></a>
 
-2. # Project name \
+# 2. Project name 
 frontend-project-lvl1 **Mind Games**
 
-3. # Discription\
-5 games on counting:\
+# 3. Discription
+5 games on counting:
 * even numbers
 * calculator
 * greatest common division
 * progression
 * prime numbers
 
-## Folder discription:\
+## Folder discription:
 bin: executive files\
 src/games: code files\
 src/index.js- general logic of all games\
@@ -25,13 +25,13 @@ src/utils.js -math basic functions\
 
 
 
-4. # Requirements
-Node.js 13 version and higher\ 
+# 4. Requirements
+Node.js 13 version and higher 
 
 
-5. # Installation
+# 5. Installation
 
-6. # Running and ascimemas\
+# 6. Running and ascimemas
 ASCIINEMAS:
 
 [game №1] (https://asciinema.org/a/15k9Rj5w2hAm1oJucAmCR5459)
