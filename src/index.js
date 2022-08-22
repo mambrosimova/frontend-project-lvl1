@@ -16,7 +16,7 @@ export const runLogic= (discription, rounds) =>{
 
 for (const [question, rightAnswer] of rounds) {
 //задать вопрос и получить ответ игрока
-console.log('Question'+':'+ question);
+console.log(`Question: ${question}`);
 const answer = readlineSync.question('Your answer ' +':');
 
 //сравнение ответов
