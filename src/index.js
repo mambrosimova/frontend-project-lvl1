@@ -10,7 +10,7 @@ export const runLogic= (discription, rounds) =>{
     console.log ("Welcome to the Brain Games!");
     //знакомство
     const name = readlineSync.question('May I have your name? ');
-    console.log('Hello, ' + name + '!');
+    console.log(`Hello, ${name}!`);
     // вопрос(описание)  игры 
     console.log (discription);
 
@@ -30,6 +30,6 @@ console. log ( 'Correct!');
 
 }// конец цикла 
 
-console.log ('Congratulations,'+ name+ '!');
+console.log (`Congratulations, ${name}!`);
 
 }
