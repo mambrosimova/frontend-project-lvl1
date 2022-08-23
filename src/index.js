@@ -22,7 +22,7 @@ const answer = readlineSync.question('Your answer ' +':');
 //сравнение ответов
 if (rightAnswer != answer) {
     console.log (answer +' is wrong answer ;(. Correct answer was ' + rightAnswer);
-    console.log (`Let us try again, ${name}!`);
+    console.log (`Let's try again, ${name}!`);
 return;
 }
 console. log ( 'Correct!');
