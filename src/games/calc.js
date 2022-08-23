@@ -48,8 +48,8 @@ const getRounds =()=> {
     let number2=getRandomNumber();
     let rightAnswer = getRightAnswer(number1, number2);
     let oper = getOper(rightAnswer, number1, number2);
-    
-    const question =(` ${number1} ${oper} ${number2}`);// интерполяция вопроса
+
+    const question =(`${number1}${oper}${number2}`);// интерполяция вопроса
     
     round[0]=question;
     round[1]=rightAnswer;
