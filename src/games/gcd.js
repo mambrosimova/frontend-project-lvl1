@@ -31,7 +31,7 @@ const getRounds =()=> {
     
     
         let rightAnswer=calcGCD(number1, number2);// правильный ответ
-        const question=(` ${number1}  ${number2}`);// ответ 
+        const question=(`${number1} ${number2}`);// ответ 
                 
         round[0]=question;
         round[1]=rightAnswer;
