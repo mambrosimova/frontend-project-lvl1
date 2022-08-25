@@ -24,7 +24,7 @@ const getRounds =()=> {
         let radndomI=randomPlaceArray(progression);
         let rightAnswer=progression[radndomI];//правильный ответ
         const question = progression;
-        question[radndomI]='...';//ряд с пропусками
+        question[radndomI]='..';//ряд с пропусками
         round[0]=question;
         round[1]=rightAnswer;
         rounds.push(round);
