@@ -25,9 +25,13 @@ const getRounds =()=> {
         let rightAnswer=progression[radndomI];//правильный ответ
         const question = progression;
         question[radndomI]='..';//ряд с пропусками
-        round[0]=question;
+        const stringquestion = question.join(' ');
+        round[0]=stringquestion;
         round[1]=rightAnswer;
-        rounds.push(round);
+        //console.log (round);
+        //const stringround = round.join(' ');//переводим массив в стороку
+        //console.log (stringround);
+        rounds.push(round);//собрали раунд
         }//end of cycle 
         return rounds;
         }//end getRounds
