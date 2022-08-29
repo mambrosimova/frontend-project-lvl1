@@ -14,7 +14,7 @@ const calcGCD =(number1,number2) => {
                 max=number2;
                 }
         for (let GCD=min; GCD>=1; GCD--) {
-                if (min=0) {
+                if (min===0) {
                 return max;
                 }
                 if(max%GCD===0 && min%GCD===0) {
