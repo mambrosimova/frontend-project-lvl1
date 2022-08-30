@@ -14,13 +14,14 @@ const runLogic = (discription, rounds) => {
   // вопрос(описание)  игры
   console.log(discription);
 
+  // eslint-disable-next-line no-restricted-syntax
   for (const [question, rightAnswer] of rounds) {
     // задать вопрос и получить ответ игрока
     console.log(`Question: ${question}`);
-    const answer = readlineSync.question(`Your answer :`);
+    const answer = readlineSync.question('Your answer :');
 
     // сравнение ответов
-    if (rightAnswer != answer) {
+    if (rightAnswer !== answer) {
       console.log(`${answer} is wrong answer ;(. Correct answer was ${rightAnswer}`);
       console.log(`Let's try again, ${name}!`);
       return;

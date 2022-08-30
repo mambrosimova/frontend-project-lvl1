@@ -21,11 +21,12 @@ const getRounds = () => {
     const progression = getProgression();// наша прогрессия в массиве
     const radndomI = randomPlaceArray(progression);
     const rightAnswer = progression[radndomI];// правильный ответ
+    const stringrightAnswer = String(rightAnswer);
     const question = progression;
     question[radndomI] = '..';// ряд с пропусками
     const stringquestion = question.join(' ');
     round[0] = stringquestion;
-    round[1] = rightAnswer;
+    round[1] = stringrightAnswer;
     // console.log (round);
     // const stringround = round.join(' ');//переводим массив в стороку
     // console.log (stringround);

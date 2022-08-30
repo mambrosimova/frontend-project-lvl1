@@ -43,12 +43,13 @@ const getRounds = () => {
     const number1 = getRandomNumber();
     const number2 = getRandomNumber();
     const rightAnswer = getRightAnswer(number1, number2);
+    const stringrightAnswer = String(rightAnswer);
     const oper = getOper(rightAnswer, number1, number2);
 
     const question = (`${number1} ${oper} ${number2}`);// интерполяция вопроса
 
     round[0] = question;
-    round[1] = rightAnswer;
+    round[1] = stringrightAnswer;
     rounds.push(round);
   }
   return rounds;

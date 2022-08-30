@@ -21,8 +21,9 @@ const getRounds = () => {
     const round = [];// свободный массив для одного раунда [question, rightAnswer]
     const question = getRandomNumber(); // задание рандомного числа -вопрос получили
     const rightAnswer = check(question);
+    const stringrightAnswer = String(rightAnswer);
     round[0] = question;
-    round[1] = rightAnswer;
+    round[1] = stringrightAnswer;
     rounds.push(round);
   }
   return rounds;

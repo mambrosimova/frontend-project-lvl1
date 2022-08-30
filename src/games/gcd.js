@@ -2,6 +2,7 @@ import runLogic from '../index.js';
 import { getRandomNumber } from '../utils.js';
 
 // функция для определения НОД
+// eslint-disable-next-line no-restricted-syntax
 const calcGCD = (number1, number2) => {
   let min;
   let max;
@@ -12,10 +13,10 @@ const calcGCD = (number1, number2) => {
     min = number1;
     max = number2;
   }
+  if (min === 0) {
+    return max;
+  }
   for (let GCD = min; GCD >= 1; GCD -= 1) {
-    if (min === 0) {
-      return max;
-    }
     if (max % GCD === 0 && min % GCD === 0) {
       return GCD;
     }
@@ -32,10 +33,12 @@ const getRounds = () => {
     const number2 = getRandomNumber();
 
     const rightAnswer = calcGCD(number1, number2);// правильный ответ
+    const stringrightAnswer = String(rightAnswer);
+
     const question = (`${number1} ${number2}`);// ответ
 
     round[0] = question;
-    round[1] = rightAnswer;
+    round[1] = stringrightAnswer;
     rounds.push(round);
   }// end of cycle
   return rounds;

@@ -21,10 +21,11 @@ const getRounds = () => {
     const round = [];// свободный массив для одного раунда [question, rightAnswer]
     const number = getRandomNumberNdimemsion(100);
     const rightAnswer = checkPrime(number);// получили правильный ответ
+    const stringrightAnswer = String(rightAnswer);
     const question = number;
 
     round[0] = question;
-    round[1] = rightAnswer;
+    round[1] = stringrightAnswer;
     rounds.push(round);
   }// end of cycle
   return rounds;
