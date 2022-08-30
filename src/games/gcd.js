@@ -21,6 +21,7 @@ const calcGCD = (number1, number2) => {
       return GCD;
     }
   }
+  return null;
 };
 
 // функция получения массива раундов
